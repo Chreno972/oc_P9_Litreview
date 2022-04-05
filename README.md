@@ -45,6 +45,8 @@ Pour suivre un abonné, il vous suffit juste de taper son nom dans le formulaire
 
 ## Cliquez sur 'Profil'
 Ici, vous aurez la possibilité d'éditer votre profil, changer vos nom et adresse mail, et photo de profil. Vous pourrez aussi voir combien de Tickets et Critiques vous avez crées ainsi que le nombre de personne qui vous suit et que vous suivez.
+Par défaut, un superutilisateur a été crée pour se connecter à la base de données et faire des modifications. pour l'utiliser, lancez le serveur
+`py manage.py runserver`, dans la barre d'addresse de votre navigateur, tapez `http://127.0.0.1:8000/admin/`, les noms et mot de passe sont `Administrateur` et `admin2022`. Sinon, vous pouvez directement créer un nouvel utilisateur à l'adresse `http://127.0.0.1:8000/`.
 
 ## Cliquez sur 'Se déconnecter'
 Pour vous déconnecter.
