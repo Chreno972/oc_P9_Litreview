@@ -18,6 +18,8 @@ Puis dans le terminal, taper `cd oc_P9_Litreview`, afin d'entrer dans le dossier
 
 `pip install -r requirements.txt`
 
+si ça ne marche pas du premier coup, un message devrait vous montrer la marche à suivre pour mettre à jour 'pip'.
+
 ## Créer une sqlite3 database
 
 `py manage.py migrate`
@@ -45,8 +47,9 @@ Pour suivre un abonné, il vous suffit juste de taper son nom dans le formulaire
 
 ## Cliquez sur 'Profil'
 Ici, vous aurez la possibilité d'éditer votre profil, changer vos nom et adresse mail, et photo de profil. Vous pourrez aussi voir combien de Tickets et Critiques vous avez crées ainsi que le nombre de personne qui vous suit et que vous suivez.
-Par défaut, un superutilisateur a été crée pour se connecter à la base de données et faire des modifications. pour l'utiliser, lancez le serveur
-`py manage.py runserver`, dans la barre d'addresse de votre navigateur, tapez `http://127.0.0.1:8000/admin/`, les noms et mot de passe sont `Administrateur` et `admin2022`. Sinon, vous pouvez directement créer un nouvel utilisateur à l'adresse `http://127.0.0.1:8000/`.
+
+Si vous souhaitez plus tard, supprimer plusieurs utilisateurs ou faire certains changements en base de données, créez un super utilisateur `py manage.py createsuperuser`
+donnez lui un nom un mail et un mot de passe. ensuite tapez dans la barre d'adresse de votre navigateur `http://127.0.0.1:8000/admin/`, validez, puis entrez vos nom d'utilisateur et mot de passe afin d'accéder à la base de données.
 
 ## Cliquez sur 'Se déconnecter'
 Pour vous déconnecter.
