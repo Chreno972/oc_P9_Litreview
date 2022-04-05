@@ -1,0 +1,88 @@
+#edit_ticket_container {
+    #ticket_edition_view_ticket {
+        img {
+            margin-bottom: 20px;
+            border-radius: 50%;
+        }
+    }
+
+    
+    form {
+        .user_update_uploader {
+            color: #ddd;
+            width: 100%;
+            margin-left: 30px;
+            margin-top: -20px;
+        }
+
+        input#profile_photo-clear_id {
+            display: none;
+        }
+
+        .user_edit {
+            width: 80%;
+            border-radius: 0;
+            margin: -20px auto 0 auto;
+        }
+    }
+}
+
+
+#corps_mes_posts {
+    .user_profile_infos {
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    
+        h2{
+            text-transform: capitalize;
+            color: #0266C8;
+        }
+
+        #user_profile_picture {
+            margin-bottom: 20px;
+            border-radius: 50%;
+        }
+
+        .user_infos {
+            margin: 10px 0;font-size: 21px;background-color: #222;color: #fff;padding: 15px;width: 100%;box-shadow: 1px 1px 5px #222;
+        }
+
+        .user_profile {
+            width: 300px;
+            margin: 20px auto;
+            background-color: #0266C8;
+            padding: 10px;
+            font-weight: bold;
+            border: none;
+            box-shadow: 1px 1px 5px #222;
+            color: #fff;
+            transition: 0.2s ease-in-out;
+            font-size: 21px;
+            text-decoration: none;
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            &:active {
+                box-shadow: none;
+            }
+        }
+    }
+    #recap {
+        span {
+            font-size: 21px; 
+            background-color: #222;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            margin: 0 5px;
+            strong {
+                background-color: #0266C8;
+                color: #fff;
+                width: 100px;
+                height: auto;
+                padding: 5px;
+            }
+        }
+    }
+}

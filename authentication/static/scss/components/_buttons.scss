@@ -1,0 +1,17 @@
+button {
+    padding: 10px;
+    font-weight: bold;
+    border: none;
+    box-shadow: 1px 1px 5px #222;
+    border-radius: 10px;
+    color: #fff;
+    transition: 0.2s ease-in-out;
+    font-size: 1.2rem;
+    &:active {
+        box-shadow: none;
+    }
+    a {
+        text-decoration: none;
+        color: #fff;
+    }
+}

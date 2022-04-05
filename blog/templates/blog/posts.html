@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+<title>{% block title %}Voir mes posts{% endblock %}</title>
+
+{% block content %} {% include 'partials/_navbar.html' %}
+<main id="corps_mes_posts">
+  <h2 class="voir_posts_titre">Vos Posts</h2>
+  {% if user.is_authenticated %}
+  {% for ticket in tickets %}
+  <section class="posts_un_ticket_publie">
+    <div class="posts_confirmation_heure_date">
+      <p class="posts_confirmation_publication"><strong>Vous</strong> avez publié une ticket</p>
+      <p class="posts_heure_date">{{ ticket.time_created }}</p>
+    </div>
+    <p class="poststitre_livre">{{ ticket.title }} - {{ ticket.description }}</p>
+    <img
+      src="{{ ticket.image.url }}"
+      alt="{{ ticket.title }}"
+      class="posts_image_critique"
+      width="310"
+      height="500"
+    />
+    <div id="tickets_buttons">
+      <button class="posts_button_modifier">
+        <a href="{% url 'edit_ticket' ticket.id %}">Modifier</a>
+      </button>
+      <button class="posts_button_supprimer">
+        <a href="{% url 'delete_ticket' ticket.id %}">Supprimer</a>
+      </button>
+    </div>
+  </section>
+  {% endfor %}
+  {% endif %}
+
+  <!-- prototype propre critique -->
+  {% for critique in critiques %}
+  <section class="posts_boite_critique_publiee">
+    <div class="posts_confirmation_heure_date">
+      <p class="posts_confirmation_publication">
+        <strong>Vous</strong> avez publié une critique
+      </p>
+      <p class="posts_heure_date">{{ critique.time_created }}</p>
+    </div>
+    <div class="posts_titre_critique_et_rating">
+      <p class="posts_titre_critique">{{ critique.headline }} &nbsp;- &nbsp</p>
+      <!-- Encodage en Javascript	\u2605 | ★ -->
+      <p class="post_rating">
+        {% if critique.rating == 1 %}
+          &#x2605;
+        {% elif critique.rating == 2 %}
+          &#x2605; &#x2605;
+        {% elif critique.rating == 3 %}
+          &#x2605; &#x2605; &#x2605;
+        {% elif critique.rating == 4 %}
+          &#x2605; &#x2605; &#x2605; &#x2605;
+        {% elif critique.rating == 5 %}
+          &#x2605; &#x2605; &#x2605; &#x2605; &#x2605;
+        {% else %}
+          0
+        {% endif %}
+      </p>
+      <p class="final_rating">
+      </p>
+    </div>
+    <p class="posts_critique">
+      {{ critique.body }}
+    </p>
+    <div class="posts_objet_critique_concernee">
+      <p class="posts_valeurs_ticket">Ticket - <strong>{{ critique.ticket.user | upper}}</strong></p>
+      <p class="poststitre_livre">{{ critique.ticket.title }} - {{ critique.ticket.description }}</p>
+      <img
+        src="{{ critique.ticket.image.url}}"
+        alt="image du livre"
+        class="posts_image_critique"
+        width="310"
+        height="500"
+      />
+    </div>
+    <div id="buttons">
+      <button class="posts_button_modifier">
+        <a href="{% url 'edit_critic' critique.id %}">Modifier</a>
+      </button>
+      <button class="posts_button_supprimer">
+        <a href="{% url 'delete_critic' critique.id %}">Supprimer</a>
+      </button>
+    </div>
+  </section>
+  {% endfor %}
+</main>
+{% endblock %}

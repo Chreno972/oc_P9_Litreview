@@ -1,0 +1,50 @@
+input {
+    text-align: center;
+    padding: 10px;
+    border: none;
+    box-shadow: 1px 1px 5px #222;
+    transition: 0.7s ease-in-out;
+    font-size: 1.2rem;
+    &:focus {
+        outline: none;
+        box-shadow: none;
+        transition: 0.5s ease-in-out;
+    }
+}
+
+textarea {
+    padding: 15px;
+    font-size: 1.2rem;
+    border: none;
+    box-shadow: 1px 1px 5px #222;
+    transition: 0.7s ease-in-out;
+    &:focus {
+        outline: none;
+        box-shadow: none;
+        transition: 0.5s ease-in-out;
+    }
+}
+
+// styliser le conteneur du bouton input file
+input[type="file"]{
+    box-shadow: none;
+}
+
+// styliser le bouton input file
+::-webkit-file-upload-button {
+    background: #fff;
+    border-radius: 5px;
+    color: #222;
+    font-size: 1.2rem;
+    font-weight: medium;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    height: auto;
+    margin: 10px 10px 10px 0;
+    box-shadow: 1px 1px 5px #222;
+    &:focus {
+        outline: none;
+        transition: 0.5s ease-in-out;
+    }
+}

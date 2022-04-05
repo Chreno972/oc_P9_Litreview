@@ -1,0 +1,119 @@
+.modif_ccat_corps {
+    width: 50%;
+    height: auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    #modif_csat_titre {
+        text-transform: uppercase;
+        font-weight: bold;
+        margin: 30px auto;
+    }
+    #modif_csat_inner_container_article {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border: none;
+        box-shadow: 1px 1px 5px #222;
+        padding: 15px;
+        #modif_csat_partie_livre_article {
+            margin: 0 0 20px 0;
+            font-size: medium;
+        }
+        #modif_csat_article_description {
+            width: 80%;
+            height: auto;
+            margin: 25px auto;
+            padding: 15px;
+            font-size: 1.2rem;
+            border: none;
+            box-shadow: 1px 1px 5px #222;
+            .modif_critique_date_heure {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .modif_critique_message_demandeur {
+                margin-bottom: 40px;
+            }
+        }
+        label {
+            width: 100%;
+            text-align: left;
+            margin: 20px 5px 5px 5px;
+            font-size: 1.3rem;
+        }
+        input {
+            width: 96%;
+            height: auto;
+            margin: 10px auto;
+        }
+        textarea {
+            width: 96%;
+            height: 260px;
+            margin: 10px auto;
+        }
+    }
+    #csat_inner_container_critique {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border: none;
+        box-shadow: 1px 1px 5px #222;
+        padding: 15px;
+        
+        #csat_critique_titre_input {
+            margin: 15px 0!important;
+        }
+        #csat_critique_note_label {
+            margin-bottom: 15px;
+        }
+        #csat_radios {
+            width: 70%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+            input {
+                margin: 0;
+            }
+            input[type="radio"] {
+                margin: 0;
+                box-shadow: none;
+            }
+            label {
+                margin: 0;
+            }
+        }
+        #csat_partie_critique {
+            margin: 30px 0;
+            font-weight: bolder;
+            text-transform: uppercase;
+        }
+        label {
+            width: 100%;
+            text-align: left;
+            margin: 20px 5px 5px 5px;
+        }
+        input {
+            width: 96%;
+            height: auto;
+            margin: 10px auto;
+        }
+        textarea {
+            width: 96%;
+            height: auto;
+            margin: 10px auto;
+        }
+        button {
+            width: 15%;
+            height: 45px;
+            margin: 10px auto;
+            background-color: #0266C8;
+        }
+    }
+}

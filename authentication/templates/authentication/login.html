@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% load static %}
+<title>{% block title %}Connection/Inscription{% endblock %}</title>
+{% block content %} {% include 'partials/_navbar_no_links.html' %}
+<main class="corps_accueil">
+  <div class="inscription">
+    <p class="inscrivez_vous">Inscrivez-vous maintenant</p>
+    <button class="inscrire">
+      <a href="{% url 'signup' %}">S'inscrire</a>
+    </button>
+  </div>
+  <div class="connexion">
+    <p class="connectez_vous">Connectez-vous</p>
+    <form method="post" class="saisir_infos">
+      {% csrf_token %}
+      {{ form.username }}
+      {{ form.password }}
+      <button type="submit" class="connecter">Se connecter</button>
+    </form>
+    {{ message }}
+  </div>
+</main>
+{% endblock %}

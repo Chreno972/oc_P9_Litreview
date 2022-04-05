@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+<title>{% block title %}Créer critique simple{% endblock %}</title>
+
+{% block content %} {% include 'partials/_navbar.html' %}
+<main id="ccst_corps">
+  <p id="ccst_titre">Créer une critique</p>
+  <section id="ccst_inner_container_article">
+    <form method="post" enctype="multipart/form-data">
+      {{ critique.as_p }}
+      {% csrf_token %}
+      <button type='submit' id="ccst_envoyer">Envoyer</button>
+      <img src="{{ ticket.image.url }}" alt="">
+    </form>
+  </section>
+</main>
+{% endblock %}

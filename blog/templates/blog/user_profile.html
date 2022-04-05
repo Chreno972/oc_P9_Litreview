@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+<title>{% block title %}Profil de {{ user.username }}{% endblock %}</title>
+
+{% block content %} {% include 'partials/_navbar.html' %}
+<main id="corps_mes_posts">
+    <section class="user_profile_infos">
+        <h2>Profil de {{ user.username }}</h2>
+        <img id="user_profile_picture" src="{{ user.profile_photo.url }}" alt="#" width="300" height="300">
+        <p class="user_infos">
+            Nom : <strong>{{ user.username}}</strong>
+        </p>
+        {% if user.email %}
+            <p class="user_infos">
+                Mail : <strong>{{ user.email }}</strong>
+            </p>
+        {% else %}
+            <p class="user_infos">
+                Mail : <strong>aucun email renseigné</strong>
+            </p>
+        {% endif %}
+        <p class="user_infos">
+            Rôle : <strong>{{ user.role | lower}}</strong>
+        </p>
+        <a class="posts_button_modifier user_profile" role="button" href="{% url 'edit_profile' %}">Modifier</a>
+    </section>
+    <hr>
+    <div id="recap">
+        <span>Tickets <strong>{{ number_of_posts }}</strong></span>
+        <span>Critiques <strong>{{ number_of_critics }}</strong></span>
+        <span>Followings <strong>{{ number_of_following }}</strong></span>
+        <span>Followers <strong>{{ number_of_followers }}</strong></span>
+    </div>
+    
+</main>
+{% endblock content %}

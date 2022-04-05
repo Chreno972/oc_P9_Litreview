@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+<title>{% block title %}Créer une réponse de critique{% endblock %}</title>
+
+{% block content %} {% include 'partials/_navbar.html' %}
+<main class="ccat_corps">
+  <h2 class="critic_response_h2">Réponse à la demande de {{ post.user }}</h2>
+  <section class="csat_inner_container_article">
+    <p id="csat_partie_livre_article">
+      Vous êtes en train de créer une critique en réponse à un ticket
+    </p>
+    <h2>Le ticket</h2>
+    <div id="csat_article_description">
+      <div class="critique_date_heure">
+        <p>Date de demande formulée</p>
+        <p class="date_critique_formulee">{{ post.time_created }}</p>
+      </div>
+      <p class="critique_message_demandeur">
+        Bonjour <strong>{{ request.user }}</strong>, je suis <strong>{{ post.user }}</strong> et je suis à la recherche d'un avis sur ce sujet, merci!
+      </p>
+      <p class="critique_titre_auteur_article">
+        {{ post.title }} - {{ post.description }}
+      </p>
+      <img
+        src="{{ post.image.url }}"
+        alt=""
+        class="{{ post.title }}"
+        width="310"
+        height="500"
+      />
+    </div>
+  </section>
+  <section class="csat_inner_container_critique">
+    <h2>La critique</h2>
+    <form method="post">
+      {% csrf_token %}
+      {{ critique_response.headline }}
+      {{ critique_response.body }}<br>
+      <h3>Nouvelle note (max - 5):</h3>
+      {{ critique_response.rating }}
+      <button class="buttons_blue" type="submit">Publier</button>
+    </form>
+  </section>
+</main>
+{% endblock %}

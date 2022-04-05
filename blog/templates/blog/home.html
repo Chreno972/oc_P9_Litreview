@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+<title>{% block title %}Flux{% endblock %}</title>
+
+{% block content %} {% include 'partials/_navbar.html' %}
+<main class="corps_flux">
+  <!-- boutons de critique -->
+  <section class="buttons">
+    <button class="demander_critique">
+      <a href="{% url 'ticket_upload' %}">Demander une critique</a>
+    </button>
+    <button class="creer_critique">
+      <a href="{% url 'standalone_critic' %}">Créer une critique</a>
+    </button>
+  </section>
+
+  <!-- prototype propre critique -->
+  {% for critique in followed_critics %}
+  <section class="boite_critique_publiee">
+    <div class="confirmation_heure_date">
+      <p class="confirmation_publication">
+        <strong>{{ critique.user | upper}}</strong> à publié une critique
+      </p>
+      <p class="heure_date">{{ critique.time_created }}</p>
+    </div>
+    <div class="titre_critique_et_rating">
+      <p class="titre_critique">{{ critique.headline }} &nbsp;- &nbsp</p>
+      <!-- Encodage en Javascript	\u2605 | ★ -->
+      <p class="rating">
+        {% if critique.rating == 1 %}
+          &#x2605;
+        {% elif critique.rating == 2 %}
+          &#x2605; &#x2605;
+        {% elif critique.rating == 3 %}
+          &#x2605; &#x2605; &#x2605;
+        {% elif critique.rating == 4 %}
+          &#x2605; &#x2605; &#x2605; &#x2605;
+        {% elif critique.rating >= 5 %}
+          &#x2605; &#x2605; &#x2605; &#x2605; &#x2605;
+        {% else %}
+          0
+        {% endif %}
+      </p>
+      <p class="final_rating">
+      </p>
+    </div>
+    <p class="critique">
+      {{ critique.body }}
+    </p>
+    <div class="objet_critique_concernee">
+      <p class="valeurs_ticket">Ticket - <strong>{{ critique.ticket.user | upper}}</strong></p>
+      <p class="poststitre_livre">{{ critique.ticket.title }} - {{ critique.ticket.description }}</p>
+      <img
+        src="{{ critique.ticket.image.url }}"
+        alt="image du livre"
+        class="image_critique"
+        width="310"
+        height="500"
+      />
+    </div>
+  </section>
+  {% empty %}
+    <p>Aucune critique publiée</p>
+  {% endfor %}
+
+  <!-- Prototype demande de critique -->
+  {% for followers_ticket in followed_tickets %}
+    <section class="boite_demande_critique">
+      <div class="confirmation_demande_heure_date">
+        <p class="confirmation_demande"><strong>{{ followers_ticket.user | upper}}</strong> a demandé une critique</p>
+        <p class="heure_date_demande">{{ followers_ticket.time_created }}</p>
+      </div>
+      <p class="titre_livre_pour_demande">
+        {{ followers_ticket.title }} - {{ followers_ticket.description }}
+      </p>
+      <img
+      src="{{ followers_ticket.image.url }}"
+      alt="{{ followers_ticket.title }}"
+      class="posts_image_critique"
+      width="310"
+      height="500"
+      />
+      <button class="creer_critique_demande">
+        <a href="{% url 'critique_response' followers_ticket.id %}">Créer une critique</a>
+      </button>
+    </section>
+  {% endfor %}
+</main>
+{% endblock %}

@@ -1,0 +1,62 @@
+
+.corps_accueil {
+    width: 80%;
+    height: 400px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    font-size: 1.3rem;
+    .inscription {
+        width: 100%;
+        grid-column: 1/2;
+        grid-row: 1/2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .inscrivez_vous {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #222;
+            margin-bottom: 20px;
+        }
+        button {
+            width: 115px;
+            width: 170px;
+            background-color: #0266C8;
+        }
+    }
+    .connexion {
+        width: 100%;
+        grid-column: 2/3;
+        grid-row: 1/2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .connectez_vous {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #222;
+            margin-bottom: 20px;
+        }
+        .saisir_infos {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            input {
+                margin: 10px auto;
+                width: 100%;
+                height: auto;
+            }
+            button {
+                margin-top: 20px;
+                width: 170px;
+                background-color: #0266C8;
+            }
+        }
+    }
+}

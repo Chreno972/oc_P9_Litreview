@@ -1,0 +1,98 @@
+.corps_flux {
+    width: 40%;
+    height: auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .buttons {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 50px auto 30px auto;
+        .demander_critique {
+            width: 350px;
+            height: auto;
+            margin: 10px 20px 0 0;
+            background-color: #F90101;
+        }
+        .creer_critique {
+            width: 350px;
+            height: auto;
+            margin: 10px 0 0 20px;
+            background-color: #0266C8;
+        }
+    }
+    .boite_critique_publiee {
+        width: 100%;
+        height: auto;
+        border: none;
+        box-shadow: 1px 1px 5px #222;
+        padding: 20px;
+        margin-top: 15px;
+        .confirmation_heure_date{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            p {
+                margin: 0;
+            };
+        }
+        .titre_critique_et_rating {
+            display: flex;
+            align-items: center;
+            p {
+                font-size: 1.2rem;
+                margin: 0;
+            }
+        }
+        .objet_critique_concernee {
+            border: none;
+            box-shadow: 1px 1px 5px #222;
+            padding: 20px;
+            img {
+                width: 400px;
+                height: 550px;
+            }
+        }
+    }
+    .boite_demande_critique {
+        width: 100%;
+        height: auto;
+        border: 1px solid #222;
+        padding: 20px;
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        .confirmation_demande_heure_date {
+            display: flex;
+            justify-content: space-between;
+            p {
+                margin: 0;
+            }
+        }
+        .titre_livre_pour_demande {
+            width: 100%;
+            height: auto;
+            align-self: flex-start;
+            justify-self: flex-start;
+        }
+        img {
+            width: 400px;
+            height: 500;
+            align-self: flex-start;
+            justify-self: flex-start;
+        }
+        button {
+            width: 40%;
+            height: 65px;
+            align-self: flex-end;
+            justify-self: flex-end;
+            background-color: #0266C8;
+        }
+    }
+}

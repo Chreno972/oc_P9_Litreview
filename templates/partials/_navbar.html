@@ -1,0 +1,17 @@
+{% load static %}
+
+<nav class="navbar">
+  <h1 class="logo_titre">LITReview</h1>
+  <ul class="links">
+    <li class="link" id="flux"><a href="{% url 'home' %}">Flux</a></li>
+    <li class="link" id="posts"><a href="{% url 'posts' %}">Posts</a></li>
+    <li class="link" id="abonnements">
+      <a href="{% url 'abonnements' %}">Abonnements</a>
+    </li>
+    <li class="link" id="profile"><a href="{% url 'user_profile' user.id %}">Profil</a></li>
+    <li class="link" id="se_deconnecter">
+      <a href="{% url 'logout' %}">Se déconnecter</a>
+    </li>
+  </ul>
+</nav>
+

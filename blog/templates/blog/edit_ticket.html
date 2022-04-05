@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+<title>{% block title %}Modifier un ticket{% endblock title%}</title>
+
+{% block content %} {% include 'partials/_navbar.html' %}
+<section id="edit_ticket_container">
+    <div id="ticket_edition_view_ticket">
+        <h2>Ticket Actuel</h2>
+        <p>
+            <strong id="utilisateur">{{ ticket.user }}</strong>
+            votre ticket actuel est:
+        </p>
+        <p class="critique_titre_auteur_article">
+            <strong>{{ ticket.title }} - {{ ticket.description }}</strong>
+        </p>
+        <img
+            class="not_rounded"
+            src="{{ ticket.image.url }}"
+            alt="{{ ticket.title }}"
+            width="44%"
+            height="auto"
+        />
+    </div>
+    <form method="post" class="ticket_edition_form" enctype="multipart/form-data">
+        <h2>Modifier Ce Ticket</h2>
+        {% csrf_token %}
+        {{ form.title }}
+        {{ form.description }}
+        <span class="form_ticket_uploader">{{ form.image }}</span>
+        <button class="buttons_blue edit_ticket_submit" type="submit">Publier</button>
+    </form>
+</section>
+{% endblock %}

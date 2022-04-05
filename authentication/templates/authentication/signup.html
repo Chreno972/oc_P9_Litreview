@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+<title>{% block title %}Formulaire d'inscription{% endblock %}</title>
+{% block content %} {% include 'partials/_navbar_no_links.html' %}
+<main class="corps_inscription">
+  <form method="post" class="informations_inscription" style="margin-top: 50px;">  
+    <h1 class="inscrivez_vous">Inscrivez-vous</h1>
+    {% csrf_token %}
+    {{ form.username }}
+    {{ form.email }}
+    {{ form.password1 }}
+    {{ form.password2 }}
+    {{ form.role }}
+    <div class="buttons">
+      <button class="retourner">
+        <a href="{% url 'login' %}">Retourner</a>
+      </button>
+      <button type="submit" class="inscrire">S'inscrire</button>
+    </div>
+    {% if form.errors %}
+      <div style="color: red;padding: 20px;font-size: 18px;">{{ form.errors }}</div> 
+    {% endif %}
+  </form>
+</main>
+{% endblock %}

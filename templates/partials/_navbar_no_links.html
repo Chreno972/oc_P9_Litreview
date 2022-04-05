@@ -1,0 +1,11 @@
+{% load static %}
+
+<nav class="navbar" id="navbar_connexion">
+  <h1 class="logo_titre" id="titre_navbar">LITReview</h1>
+  <ul class="links" id="ul_navbar">
+    {% if user.is_authenticated %}
+      <li class="li_navbar"><a href="{% url 'home' %}">Continuer</a></li>
+      <li class="li_navbar" id="logout"><a href="{% url 'logout' %}">Se déconnecter</a></li>
+    {% endif %}
+  </ul>
+</nav>

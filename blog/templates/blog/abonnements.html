@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+<title>{% block title %}Abonnements{% endblock %}</title>
+{% block content %} {% include 'partials/_navbar.html' %}
+<main class="corps_abonnements">
+  <section class="suivre">
+    <h2 class="suivre_utilisateurs_titre">Suivre d'autres utilisateurs</h2>
+    <form method="post">
+      {% csrf_token %}
+      <input type="text" name="follow" class="valid_follow" placeholder="Entrez un nom d'utilisateur à suivre"><br>
+      <button type="submit">
+        Envoyer
+      </button>
+    </form>
+  </section>
+  <section id="abonnements_messages">
+    {% if error %}
+    <p id="error_message">{{ error }}</p>
+    {% endif %}
+    {% if success %}
+    <p id="success">{{ success }}</p>
+    {% endif %}
+  </section>
+  <section class="abonnements">
+    <h3 class="abonnements_titre">Abonnements</h3>
+    {% for user in follows %}
+      <div class="utilisateur_desabonner_container">
+        <p class="nom_utilisateur_desabonner">{{ user.username }}</p>
+        <form method="post">
+          {% csrf_token %}
+            <input type="hidden" name="unfollow" value="{{ user.id }}">
+            <button class="bouton_desabonner" type="submit">
+              Se désabonner
+            </button>
+        </form>
+      </div>
+    {% endfor %}
+  </section>
+  <section class="abonnes">
+    <h3 class="abonnes_titre">Abonnés</h3>
+    {% for user in followers %}
+      <div class="utilisateur_abonne_container">
+      <p class="nom_utilisateur_abonne">{{ user.username }}</p>
+    </div>
+    {% endfor %}
+  </section>
+</main>
+{% endblock %}
+<script src="../../../authentication/static/js/main.js"></script>

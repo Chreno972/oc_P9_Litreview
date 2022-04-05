@@ -1,0 +1,131 @@
+#corps_mes_posts {
+    width: 40%;
+    height: auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h2 {
+        font-size: 31.2px;
+        margin-top: 35px;
+    }
+    .posts_boite_critique_publiee {
+        width: 100%;
+        height: auto;
+        border: none;
+        box-shadow: 1px 1px 5px #222;
+        padding: 20px;
+        margin-top: 15px;
+        .posts_confirmation_heure_date{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            p {
+                margin: 0;
+            };
+        }
+        .posts_titre_critique_et_rating {
+            display: flex;
+            align-items: center;
+            p {
+                font-size: 1.2rem;
+                margin: 0;
+            }
+        }
+        .posts_objet_critique_concernee {
+            border: none;
+            box-shadow: 1px 1px 5px #222;
+            padding: 20px;
+            img {
+                width: 400px;
+                height: 500;
+            }
+        }
+    }
+    .posts_boite_demande_critique {
+        width: 100%;
+        height: auto;
+        border: 1px solid #222;
+        padding: 20px;
+        margin-top: 15px;
+        display: grid;
+        display:-ms-grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        .posts_confirmation_demande_heure_date {
+            grid-column: 1/3;
+            grid-row: 1/2;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            height: auto;
+            p {
+                margin: 0;
+            }
+        }
+        .posts_titre_livre_pour_demande {
+            grid-column: 1/3;
+            grid-row: 2/3;
+            display: flex;
+            align-items: center;
+            height: auto;
+        }
+    }
+    #buttons {
+        width:100%;
+        height: auto;
+        margin: 10px auto;
+        display: flex;
+        justify-content: flex-end;
+        .posts_button_modifier, .posts_button_supprimer {
+            width: 170px;
+            margin: 5px 20px;
+        }
+        .posts_button_modifier {
+            background-color: #0266C8; 
+        }
+        .posts_button_supprimer {
+            background-color: #F90101;
+        }
+    }
+    .posts_un_ticket_publie {
+        width: 100%;
+        height: auto;
+        border: none;
+        box-shadow: 1px 1px 5px #222;
+        padding: 20px;
+        margin-top: 15px;
+        .posts_confirmation_heure_date{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            p {
+                margin: 0;
+            };
+        }
+        img {
+            width: 400px;
+            height: 550px;
+        }
+        #tickets_buttons {
+            width:100%;
+            height: auto;
+            margin: 20px auto 10px auto;
+            display: flex;
+            justify-content: flex-end;
+            .posts_button_modifier, .posts_button_supprimer {
+                width: 170px;
+                margin: 5px 20px;
+            }
+            .posts_button_modifier {
+                background-color: #0266C8; 
+            }
+            .posts_button_supprimer {
+                background-color: #F90101;
+            }
+        }
+    }
+}

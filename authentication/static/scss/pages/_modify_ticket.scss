@@ -1,0 +1,71 @@
+
+#edit_ticket_container {
+    margin-top: 100px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    #ticket_edition_view_ticket {
+        padding: 20px;
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        h2 {
+            color: #0266C8;
+        }
+        p {
+            width: 100%;
+        }
+        strong#utilisateur {
+            text-transform: capitalize;
+            color: #0266c8;
+        }
+        img.not_rounded {
+            border-radius: 0!important;
+        }
+    }
+    .ticket_edition_form {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;padding: 20px;
+        h2 {
+            margin-bottom: 40px;
+            color: #0266c8;
+        }
+        h3 {
+            color: #0266c8;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 80%;
+            margin-bottom: 20px;
+        }
+        textarea {
+            width: 80%;
+        }
+        input#image-clear_id, label, a {
+            display: none;
+        }
+        button {
+            width: 170px;
+            height: 45px;
+            background-color: #0266C8;
+        }
+        .form_ticket_uploader {
+            color:#ddd;
+            text-align: left;
+            width: 100%;
+            padding-left: 25px;
+            margin-top: -10px;
+        }
+        .edit_ticket_submit {
+            width: 81%; 
+            border-radius: 0;
+            margin: -10px auto 0 auto;
+        }
+    }
+}

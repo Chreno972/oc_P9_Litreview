@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+<title>{% block title %}Créer une critique autonome{% endblock %}</title>
+
+{% block content %} {% include 'partials/_navbar.html' %}
+<main class="ccat_corps">
+  <h2 id="csat_titre">
+    Critique autonome de 
+    <strong id="utilisateur">
+      {{ request.user }}
+    </strong>
+  </h2>
+  
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <section class="csat_inner_container_critique">
+      <div class="ticket_display_class">
+        <p class="ticket_autonome_p">
+          Le ticket
+        </p>
+          {{ ticket.title }}
+          {{ ticket.description }}
+          {{ ticket.image }}
+      </div>
+    </section>
+    <section class="csat_inner_container_critique">
+      <div class="inner_cont_div">
+        <p class="csat_partie_critique">
+          La critique
+        </p>
+        {{ critique.headline }}
+        {{ critique.body }}
+        <h4 class="new_note">Nouvelle note (max - 5):</h4>
+        {{ critique.rating }}
+        <input class="send_ticket_or_critique" id="csat_envoyer" type="submit" value="Envoyer">
+      </div>
+    </section>
+  </form>
+</main>
+{% endblock %}
