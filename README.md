@@ -18,6 +18,9 @@ Puis dans le terminal, taper `cd oc_P9_Litreview`, afin d'entrer dans le dossier
 
 `pip install -r requirements.txt`
 
+## Créer une sqlite3 database
+
+`py manage.py migrate`
 ## Lancer le serveur django
 
 `py manage.py runserver`
