@@ -7,8 +7,8 @@ from authentication.models import User
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
     """User admin"""
-    list_display = ("id", "username", "email", "role", "is_active")
-    list_filter = ("role", "is_active")
+    list_display = ("id", "username", "email","is_active")
+    list_filter = ("id", "username", "is_active")
 
 
 @admin.register(Ticket)

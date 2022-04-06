@@ -30,6 +30,13 @@ si ça ne marche pas du premier coup, un message devrait vous montrer la marche 
 ## Dans le terminal 
 combinez 'ctrl - click' sur le lien http://127.0.0.1:8000/ qui vous dirige vers la page de connexion.
 
+Afin de ne pas perdre de temps, dans la base de données que je vous ai envoyé, j'ai déjà crée des abonnés
+`Zotka - Carla - Marylin - Rick` => leur mot de passe est constitué de leur nom + 2022
+Pour vous j'ai crée un utilisateur identifiant => `Gontran` que vous pourrez utiliser mot de passe => `Gontran2022`
+Vous aurez aussi la possibilité d'utiliser le profil superutilisateur `Administrateur` mot de passe => `admin2022` pour
+entrer dans la base de données django => `http://127.0.0.1:8000/admin`
+
+
 ## Cliquez sur "s'inscrire" 
 pour créer un nouveau compte utilisateur. Renseignez toutes les informations requises. puis clickez sur s'inscrire.
 

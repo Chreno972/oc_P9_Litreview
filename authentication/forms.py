@@ -91,4 +91,4 @@ class SignupForm(UserCreationForm):
         _return_      : Meta class
         """
         model = get_user_model()
-        fields = ("username", "email", "password1", "password2", "role")
+        fields = ("username", "email", "password1", "password2")

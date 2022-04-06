@@ -18,9 +18,6 @@
                 Mail : <strong>aucun email renseigné</strong>
             </p>
         {% endif %}
-        <p class="user_infos">
-            Rôle : <strong>{{ user.role | lower}}</strong>
-        </p>
         <a class="posts_button_modifier user_profile" role="button" href="{% url 'edit_profile' %}">Modifier</a>
     </section>
     <hr>

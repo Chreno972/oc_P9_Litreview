@@ -7,7 +7,7 @@ from . import models
 class TicketForm(forms.ModelForm):
     """TicketForm class"""
     title = forms.CharField(
-        max_length=20,
+        max_length=200,
         label="",
         required=True,
         widget=forms.TextInput(
@@ -15,7 +15,7 @@ class TicketForm(forms.ModelForm):
         ),
     )
     description = forms.CharField(
-        max_length=20,
+        max_length=200,
         required=True,
         label="",
         widget=forms.Textarea(
@@ -35,7 +35,7 @@ class TicketForm(forms.ModelForm):
 class CriticResponseForm(forms.ModelForm):
     """CriticResponseForm class"""
     headline = forms.CharField(
-        max_length=60,
+        max_length=100,
         required=True,
         label="",
         widget=forms.TextInput(
