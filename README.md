@@ -19,10 +19,9 @@ Puis dans le terminal, taper `cd oc_P9_Litreview`, afin d'entrer dans le dossier
 `pip install -r requirements.txt`
 
 si ça ne marche pas du premier coup, un message devrait vous montrer la marche à suivre pour mettre à jour 'pip'.
-
-## Créer une sqlite3 database
-
-`py manage.py migrate`
+## Collez le fichier Sqlite3 joint
+je vous ai envoyé un fichier SQLite contenant déjà des données. copiez le et collez le dans la base de ce projet.
+Puis, dans le terminal, tapez:
 ## Lancer le serveur django
 
 `py manage.py runserver`
